@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Web3 Futuristic Movie Streaming Design System */
+
+@layer base {
+  :root {
+    /* Deep Space Background */
+    --background: 250 50% 5%;
+    --foreground: 0 0% 100%;
+
+    /* Glassmorphic Cards */
+    --card: 250 40% 8%;
+    --card-foreground: 0 0% 100%;
+    --glass: 250 35% 10% / 0.85;
+    --glass-border: 280 70% 60% / 0.3;
+
+    /* Vibrant Neon Accents */
+    --neon-cyan: 190 100% 55%;
+    --neon-purple: 280 70% 60%;
+    --neon-pink: 330 85% 65%;
+    --neon-blue: 220 100% 65%;
+
+    /* Primary Electric Purple */
+    --primary: 280 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Glass Secondary */
+    --secondary: 250 30% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Glass */
+    --muted: 250 25% 20%;
+    --muted-foreground: 240 10% 70%;
+
+    /* Accent Neon Cyan */
+    --accent: 190 100% 55%;
+    --accent-foreground: 250 50% 5%;
+
+    /* Destructive Neon Pink */
+    --destructive: 330 85% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Glass Borders */
+    --border: 250 30% 22%;
+    --input: 250 30% 22%;
+    --ring: 280 70% 60%;
+
+    /* Hero Button Variants */
+    --hero-primary: 280 70% 60%;
+    --hero-primary-foreground: 0 0% 100%;
+    --hero-secondary: 250 35% 15% / 0.9;
+    --hero-secondary-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(280 70% 60% / 0.3), hsl(190 100% 55% / 0.3));
+    --gradient-hero: linear-gradient(135deg, hsl(250 50% 5%), hsl(250 40% 10%));
+    --gradient-card: linear-gradient(135deg, hsl(250 35% 12% / 0.85), hsl(250 30% 16% / 0.7));
+
+    /* Shadows & Glows */
+    --shadow-neon: 0 0 25px hsl(280 70% 60% / 0.4), 0 0 50px hsl(280 70% 60% / 0.2);
+    --shadow-purple: 0 0 25px hsl(280 70% 60% / 0.4);
+    --shadow-cyan: 0 0 25px hsl(190 100% 55% / 0.4);
+    --shadow-glass: 0 10px 40px hsl(250 50% 5% / 0.6);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--neon-purple));
+  }
+}
+
+@layer components {
+  /* Glass Morphism Effects */
+  .glass {
+    background: hsl(var(--glass));
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Neon Glow Effects */
+  .glow-cyan {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .glow-purple {
+    box-shadow: var(--shadow-purple);
+  }
+
+  /* Hero Button Variants */
+  .btn-hero {
+    background: hsl(var(--hero-primary));
+    color: hsl(var(--hero-primary-foreground));
+    border: 1px solid hsl(var(--primary));
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-neon);
+  }
+
+  .btn-hero-secondary {
+    background: hsl(var(--hero-secondary));
+    color: hsl(var(--hero-secondary-foreground));
+    border: 1px solid hsl(var(--border));
+    backdrop-filter: blur(20px);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hero-secondary:hover {
+    transform: translateY(-2px);
+    border-color: hsl(var(--primary));
+    box-shadow: var(--shadow-neon);
+  }
+
+  /* Card Hover Effects */
+  .movie-card {
+    transition: var(--transition-spring);
+    cursor: pointer;
+  }
+
+  .movie-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-neon);
+  }
+
+  /* Cyber Text Effects */
+  .text-neon {
+    color: hsl(var(--primary));
+    text-shadow: 0 0 15px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+

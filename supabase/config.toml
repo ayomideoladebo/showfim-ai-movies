@@ -1,0 +1,10 @@
+project_id = "bstuliwnlvxlfsfhfbwt"
+
+[functions.get-weather]
+verify_jwt = false
+
+[functions.ai-movie-recommendations]
+verify_jwt = false
+
+[functions.ai-chat-assistant]
+verify_jwt = false
