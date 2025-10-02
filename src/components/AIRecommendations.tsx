@@ -74,8 +74,8 @@ const AIRecommendations = ({ weather, location, movies }: AIRecommendationsProps
         <div className="flex items-center gap-3">
           <Sparkles className="w-8 h-8 text-accent" />
           <div>
-            <h2 className="text-3xl font-bold text-gradient">AI Recommendations</h2>
-            <p className="text-sm text-muted-foreground">Powered by Gemini AI</p>
+            <h2 className="text-3xl font-bold text-gradient">Based on the current weather in {location}</h2>
+            <p className="text-sm text-muted-foreground">Recommended by Gemini AI</p>
           </div>
         </div>
         <button
